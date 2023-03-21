@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Baby Reveal & Shower Invite</title>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+	<h1>Natalie and Eddie are having a baby!</h1>
+
+	<p>Pop the balloon to reveal the gender of their baby and to see an invite to the baby shower!</p>
+
+	</br>
+
+	<!-- Confetti originates from within the button-wrapper. -->
+	<div class="button-wrapper">
+		<!-- The showDetails() script sets the id="balloon" display to none and the id="details" display to block. -->	
+		<input type="image" src="img/balloon00.jpg" style="width:200px;height:auto;" id="balloon" class="confetti-button" onclick="showDetails()"></input>
+		
+		<!-- Hidden details and contains an image of the balloon that is popped.. -->
+		<div id="details" style="display:none;">
+			<img src="img/balloon01.jpg" style="width:200px;height:auto;">
+			<p>Link to RSVP coming soon!</p>
+			<p>Link to registry coming soon!</p>
+		</div>		
+	</div>
+	
+	<!--
+	<div class="button-wrapper">
+		<button class="confetti-button">Yay🎉</button>
+	</div>	
+	-->
+
+	<script>
+		/** https://redstapler.co/how-to-create-confetti-button-effect/ & https://www.kirilv.com/canvas-confetti/ **/
+		document.getElementsByClassName("confetti-button")[0].addEventListener("click", () => {
+			let canvas = document.createElement("canvas");
+			canvas.width = 1600;
+			canvas.height = 1600;
+			let container = document.getElementsByClassName("button-wrapper")[0];
+			container.appendChild(canvas);
+
+			let confetti_button = confetti.create(canvas);
+			confetti_button({
+				particleCount: 350,
+				spread: 360,
+				startVelocity: 20,
+				scalar: 0.9,
+				ticks: 190,
+				colors: ["#00b7eb","#6495ed","#007fff","#4666ff","#4166f5","#0047ab","#0f4d92"]
+			}).then(() => container.removeChild(canvas));
+		});
+	</script>
+
+</body>
+</html>

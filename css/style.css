@@ -1,0 +1,16 @@
+/** https://redstapler.co/how-to-create-confetti-button-effect/ & https://www.kirilv.com/canvas-confetti/ **/
+
+/** The button wrapper may need to have a height and width equitable to the button image. **/
+.button-wrapper {
+	position: relative;
+	width: 200px;
+	height: 60px;
+}
+
+.button-wrapper canvas {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+}
