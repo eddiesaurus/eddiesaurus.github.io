@@ -1,16 +1,105 @@
-/** https://redstapler.co/how-to-create-confetti-button-effect/ & https://www.kirilv.com/canvas-confetti/ **/
-
-/** The button wrapper may need to have a height and width equitable to the button image. **/
-.button-wrapper {
+body {
 	position: relative;
-	width: 200px;
-	height: 60px;
+	background-color: #c7c5b6;
+	margin: 0 0 0 0; /* Use the full page. */
 }
 
-.button-wrapper canvas {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	pointer-events: none;
+#banner {
+	position: relative;
+	background-color: gray;
+	box-shadow: 0 3px 13px -3px black;
+}
+
+/* The default dimensions for card00.png are 1536px by 1792px. */
+#card {
+	aspect-ratio: 1 / 1.17; /* Maintain proportions when scaling card00.png by height. */
+	border: 3px solid; /* Developer bounding box. */
+	
+	/** The height and margin values may need to be individualized based on screen size. **/
+	height: 80%;
+	margin: 30px auto;
+}
+
+h1 {
+	margin: 0 auto; /* Bounding box fits to text vertically. Horizontally centered. */
+	font-family: 'Architects Daughter', cursive; /* https://www.w3schools.com/howto/howto_google_fonts.asp */
+	font-weight: bold;
+	text-align: center;
+}
+
+p {
+	font-family: arial, sans-serif;
+}
+
+/** This h2 style may soon become a button with a hover and click effect. **/
+h2 {
+	font-family: arial, sans-serif;
+	text-align: center;
+}
+
+#footer p {
+	text-align: center;
+	font-size: 0.75em;
+	color: #908c6f;
+}
+
+#announcement, #details, #footer {
+	margin: 18px auto;
+	border: 3px solid black;
+}
+
+/* Desktop resolution full screen. */
+@media only screen and (max-width: 1920px) {
+	#banner {
+		height: 780px;
+	}
+	
+	#card {
+		border-color: red;
+	}
+	
+	#announcement, #details, #footer {
+		width: 600px;
+	}
+	
+	h1 {
+		font-size: 2.25em;
+	}
+}
+
+/* iPad & Fire resolution. Desktop half screen. */
+@media only screen and (max-width: 960px) {
+	#banner {
+		height: 740px;
+	}
+	
+	#card {
+		border-color: blue;
+	}
+
+	#announcement, #details, #footer {
+		width: 550px;
+	}
+
+	h1 {
+		font-size: 2em;
+	}
+}
+	
+/* iPhone & Galaxy resolution. */
+@media only screen and (max-width: 620px) {
+	#banner {
+		height: 700px;
+	}
+	
+	#card {
+		border-color: green;
+	}
+	#announcement, #details, #footer {
+		width: 515px;
+	}
+	
+	h1 {
+		font-size: 1.75em;
+	}
 }

@@ -1,58 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<title>Baby Reveal & Shower Invite</title>
+
+	<title>Natalie & Eddie's Baby!</title>
+	
+	<link rel="stylesheet" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	
 	<script type="text/javascript" src="js/script.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 </head>
 <body>
 
-	<h1>Natalie and Eddie are having a baby!</h1>
-
-	<p>Pop the balloon to reveal the gender of their baby and to see an invite to the baby shower!</p>
-
+	<div id="banner">
+	
 	</br>
-
-	<!-- Confetti originates from within the button-wrapper. -->
-	<div class="button-wrapper">
-		<!-- The showDetails() script sets the id="balloon" display to none and the id="details" display to block. -->	
-		<input type="image" src="img/balloon00.jpg" style="width:200px;height:auto;" id="balloon" class="confetti-button" onclick="showDetails()"></input>
+	
+		<div id="announcement">
+			<h1>Natalie and Eddie are having a Baby!</h1>
+		</div>
 		
-		<!-- Hidden details and contains an image of the balloon that is popped.. -->
-		<div id="details" style="display:none;">
-			<img src="img/balloon01.jpg" style="width:200px;height:auto;">
-			<p>Link to RSVP coming soon!</p>
-			<p>Link to registry coming soon!</p>
-		</div>		
+		<div id="card" style="background:url('img/card00.png');background-position:0;background-size:200% 100%;" onClick="showDetails()"></div> <!-- Runs showDetails() to "pop the balloon" and reveal the gender. Background and associated attributes must be defined in the webpage (.html) to work as intended. -->
+		
 	</div>
 	
-	<!--
-	<div class="button-wrapper">
-		<button class="confetti-button">Yay🎉</button>
-	</div>	
-	-->
-
-	<script>
-		/** https://redstapler.co/how-to-create-confetti-button-effect/ & https://www.kirilv.com/canvas-confetti/ **/
-		document.getElementsByClassName("confetti-button")[0].addEventListener("click", () => {
-			let canvas = document.createElement("canvas");
-			canvas.width = 1600;
-			canvas.height = 1600;
-			let container = document.getElementsByClassName("button-wrapper")[0];
-			container.appendChild(canvas);
-
-			let confetti_button = confetti.create(canvas);
-			confetti_button({
-				particleCount: 350,
-				spread: 360,
-				startVelocity: 20,
-				scalar: 0.9,
-				ticks: 190,
-				colors: ["#00b7eb","#6495ed","#007fff","#4666ff","#4166f5","#0047ab","#0f4d92"]
-			}).then(() => container.removeChild(canvas));
-		});
-	</script>
-
+	<div id="details" style="display:none;"> <!-- Registry and RSVP information initially hidden. -->
+		<h1>Let's Celebrate!</h1>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
+		<h2>RSVP with Google Forms!</h2>
+		
+		<h2>View  Registry with Amazon!</h2>
+	</div>
+	
+	<div id="footer">
+		<p>Website by Eddie | Art by Natalie | Copyright 2023</p>
+	</div>
+	
 </body>
 </html>
