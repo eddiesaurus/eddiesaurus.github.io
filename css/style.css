@@ -6,6 +6,7 @@ body {
 
 #banner {
 	position: relative;
+	width: 100%;
 	background-color: gray;
 	box-shadow: 0 3px 13px -3px black;
 }
@@ -14,10 +15,7 @@ body {
 #card {
 	aspect-ratio: 1 / 1.17; /* Maintain proportions when scaling card00.png by height. */
 	border: 3px solid; /* Developer bounding box. */
-	
-	/** The height and margin values may need to be individualized based on screen size. **/
-	height: 80%;
-	margin: 30px auto;
+	margin: 18px auto;
 }
 
 h1 {
@@ -31,10 +29,11 @@ p {
 	font-family: arial, sans-serif;
 }
 
-/** This h2 style may soon become a button with a hover and click effect. **/
-h2 {
+button {
 	font-family: arial, sans-serif;
 	text-align: center;
+	display: block;
+	margin: 18px auto;
 }
 
 #footer p {
@@ -51,15 +50,16 @@ h2 {
 /* Desktop resolution full screen. */
 @media only screen and (max-width: 1920px) {
 	#banner {
-		height: 780px;
+		height: 70%;
 	}
 	
 	#card {
 		border-color: red;
+		max-width: 48%;
 	}
 	
 	#announcement, #details, #footer {
-		width: 600px;
+		width: 48%;
 	}
 	
 	h1 {
@@ -70,15 +70,16 @@ h2 {
 /* iPad & Fire resolution. Desktop half screen. */
 @media only screen and (max-width: 960px) {
 	#banner {
-		height: 740px;
+		height: 70%;
 	}
 	
 	#card {
 		border-color: blue;
+		max-width: 62%;
 	}
 
 	#announcement, #details, #footer {
-		width: 550px;
+		width: 62%;
 	}
 
 	h1 {
@@ -89,14 +90,15 @@ h2 {
 /* iPhone & Galaxy resolution. */
 @media only screen and (max-width: 620px) {
 	#banner {
-		height: 700px;
+		height: 80%;
 	}
 	
 	#card {
 		border-color: green;
+		max-width: 90%;
 	}
 	#announcement, #details, #footer {
-		width: 515px;
+		width: 90%;
 	}
 	
 	h1 {
