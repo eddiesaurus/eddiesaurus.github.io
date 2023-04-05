@@ -5,7 +5,8 @@
 	<title>Natalie & Eddie's Baby!</title>
 	
 	<link rel="stylesheet" href="css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"> 
 	
 	<script type="text/javascript" src="js/script.js"></script>
 	
@@ -17,30 +18,40 @@
 	<div id="banner">
 	
 	</br>
+		
+		<div id="card" onClick="showDetails()">
+		
+			<div id="cardBefore" class="cardText">
+				<p>Natalie & Eddie are having a baby!</p>
+				<h1>Pop the Balloon</h1>
+				<p>to reveal the gender!</p>
+			</div>
+			
+			<div id="cardAfter" class="cardText" style="display:none;">
+				<h1>It's A Boy!</h1>
+				<p>Press the cake to see details about the baby shower!</p>
+			</div>	
+		
+		</div> <!-- Runs showDetails() to "pop the balloon" and reveal the gender. -->
+		
+	</div>
 	
-		<div id="announcement">
-			<h1>Natalie and Eddie are having a Baby!</h1>
+	<div id="content">
+		<div id="details" style="display:none;"> <!-- Registry and RSVP information initially hidden. -->
+			<h1>A Baby Shower Picnic!</h1>
+			
+			<p>We're serving up snacks and music to our friends and family at (LOCATION) on (DATE) from (DURATION) to celebrate the arrival of our baby boy. We've reserved a pavilion for this coed party and its right next to a playground, baseball field, and basketball court so make sure to bring your kids!</p>
+			
+			<p>Please RSVP by pressing the button below. After that, we welcome you to visit the registry by pressing the other button to see gifts that should help us care of our baby after he's born. Bags or unwrapped gifts only please, thank you, and see you at the party!</p>
+			
+			<button>RSVP with Google Forms!</button>
+			
+			<button>View the Registry with Amazon!</button>
 		</div>
 		
-		<div id="card" style="background:url('img/card00.png');background-position:0;background-size:200% 100%;" onClick="showDetails()"></div> <!-- Runs showDetails() to "pop the balloon" and reveal the gender. Background and associated attributes must be defined in the webpage (.html) to work as intended. -->
-		
-	</div>
-	
-	<div id="details" style="display:none;"> <!-- Registry and RSVP information initially hidden. -->
-		<h1>Let's Celebrate!</h1>
-		
-		<p>We're serving up snacks, drinks, and music to our friends and family at (LOCATION) on (DATE) from (DURATION) to celebrate the arrival of our baby boy. We've reserved a pavilion for this coed party and its right next to a playground, baseball field, and basketball court so make sure to bring your kids!</p>
-		
-		<p>Please RSVP by pressing the button below. After that, we welcome you to visit the registry by pressing the other button for gifts that should help us care of our baby after he's born. Bags or unwrapped gifts only please, thank you, and see you at the party!</p>
-		
-		<!-- Possible make into a button with action on RSVP first and registry secondary. -->
-		<button>RSVP with Google Forms!</button>
-		
-		<button>View the Registry with Amazon!</button>
-	</div>
-	
-	<div id="footer">
-		<p>Website by Eddie | Art by Natalie | Copyright 2023</p>
+		<div id="footer">
+			<p>Website by Eddie | Art by Natalie | Copyright 2023</p>
+		</div>
 	</div>
 	
 </body>

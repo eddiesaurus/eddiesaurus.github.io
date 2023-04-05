@@ -1,39 +1,96 @@
 body {
 	position: relative;
-	background-color: #c7c5b6;
 	margin: 0 0 0 0; /* Use the full page. */
+	
+	background: url(../img/body00.jpg); /* Navigate back one directory and then look for img/banner00.jpg */
+	background-repeat: repeat;
+	background-position: center top;
+	
+	font-size: 100%;
 }
 
 #banner {
 	position: relative;
+	z-index: 1;
+	
 	width: 100%;
-	background-color: gray;
-	box-shadow: 0 3px 13px -3px black;
+	box-shadow: 0 30px 90px -30px black;
+	
+	background: url(../img/banner00.jpg); /* Navigate back one directory and then look for img/banner00.jpg */
+	background-repeat: repeat;
+	background-position: center bottom;
 }
 
-/* The default dimensions for card00.png are 1536px by 1792px. */
 #card {
-	aspect-ratio: 1 / 1.17; /* Maintain proportions when scaling card00.png by height. */
-	border: 3px solid; /* Developer bounding box. */
 	margin: 18px auto;
+	
+	aspect-ratio: 1 / 1.17; /* Maintain proportions when scaling card00.png by height. */
+	
+	background: url(../img/card00.png); /* Navigate back one directory and then look for img/card00.png */
+	background-position: 0;
+	background-size: 200% 100%;
+	
+	/* border: 3px solid; /* Developer bounding box. */
 }
 
-h1 {
+#card:hover {
+	rotate: 5deg;
+}
+
+.cardText {
+	position: relative;
+	left: 48%;
+	top: 34%;
+	
+	width: 31%;
+	
+	text-align: center;
+	color: rgba(26, 13, 13, 0.85)
+}
+
+.cardText h1 {
+	font-family: 'Permanent Marker', cursive; /* https://www.w3schools.com/howto/howto_google_fonts.asp */
+	line-height: 100%;
+}
+
+.cardText p {
+	font-family: 'Indie Flower', cursive;
+	font-weight: bold;
+	line-height: 100%;
+}
+
+#content {
+	position: relative;
+	z-index: 2;
+	margin: 18px auto;
+	
+	border: 1px solid black;
+	background-color: #c7c5b6;
+}
+
+#details {
+	padding: 12px;
+}
+
+#details h1 {
 	margin: 0 auto; /* Bounding box fits to text vertically. Horizontally centered. */
-	font-family: 'Architects Daughter', cursive; /* https://www.w3schools.com/howto/howto_google_fonts.asp */
+	
+	font-family: 'Permanent Marker', cursive; /* https://www.w3schools.com/howto/howto_google_fonts.asp */
+	font-weight: bold;
 	font-weight: bold;
 	text-align: center;
 }
 
-p {
+#details, #footer p {
 	font-family: arial, sans-serif;
 }
 
 button {
+	display: block;
+	margin: 18px auto;	
+	
 	font-family: arial, sans-serif;
 	text-align: center;
-	display: block;
-	margin: 18px auto;
 }
 
 #footer p {
@@ -42,66 +99,100 @@ button {
 	color: #908c6f;
 }
 
-#announcement, #details, #footer {
-	margin: 18px auto;
-	border: 3px solid black;
-}
-
 /* Desktop resolution full screen. */
-@media only screen and (max-width: 1920px) {
+@media only screen and (min-width: 961px) {
+	body {
+		background-size: 80%;
+	}
+	
 	#banner {
 		height: 70%;
+		background-size: 100%;
 	}
 	
 	#card {
-		border-color: red;
+		/* border-color: red;  /* Developer bounding box. */
 		max-width: 48%;
 	}
 	
-	#announcement, #details, #footer {
+	#content {
 		width: 48%;
 	}
+
+	.cardText h1 {
+		font-size: 3.75vw; /* Text size set to vw will scale with the screen. */
+	}
+
+	.cardText p {
+		font-size: 2vw;
+	}
 	
-	h1 {
+	#details h1 {
 		font-size: 2.25em;
 	}
 }
 
 /* iPad & Fire resolution. Desktop half screen. */
 @media only screen and (max-width: 960px) {
+	body {
+		background-size: 100%;
+	}
+	
 	#banner {
 		height: 70%;
+		background-size: 150%;
 	}
 	
 	#card {
-		border-color: blue;
+		/* border-color: blue;  /* Developer bounding box. */
 		max-width: 62%;
 	}
 
-	#announcement, #details, #footer {
+	#content {
 		width: 62%;
 	}
 
-	h1 {
+	.cardText h1 {
+		font-size: 4.25vw;
+	}
+
+	.cardText p {
+		font-size: 2.5vw;
+	}
+	
+	#details h1 {
 		font-size: 2em;
 	}
 }
 	
 /* iPhone & Galaxy resolution. */
 @media only screen and (max-width: 620px) {
+	body {
+		background-size: 120%;
+	}
+	
 	#banner {
 		height: 80%;
+		background-size: 215%;
 	}
 	
 	#card {
-		border-color: green;
+		/* border-color: green;  /* Developer bounding box. */
 		max-width: 90%;
 	}
-	#announcement, #details, #footer {
+	#content {
 		width: 90%;
 	}
+
+	.cardText h1 {
+		font-size: 5.85vw;
+	}
+
+	.cardText p {
+		font-size: 4vw;
+	}
 	
-	h1 {
+	#details h1 {
 		font-size: 1.75em;
 	}
 }
