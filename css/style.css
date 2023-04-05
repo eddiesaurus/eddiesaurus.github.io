@@ -22,6 +22,7 @@ body {
 }
 
 #card {
+	position: relative;
 	margin: 18px auto;
 	
 	aspect-ratio: 1 / 1.17; /* Maintain proportions when scaling card00.png by height. */
@@ -38,10 +39,10 @@ body {
 }
 
 .cardText {
-	position: relative;
+	position: absolute;
 	left: 48%;
 	top: 32%;
-	
+		
 	width: 31%;
 	
 	text-align: center;
