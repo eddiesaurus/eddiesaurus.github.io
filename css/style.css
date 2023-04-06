@@ -38,10 +38,6 @@ body {
 	rotate: 5deg;
 }
 
-#card:active {
-	rotate: 0deg;
-}
-
 .cardText {
 	position: absolute;
 	left: 48%;
