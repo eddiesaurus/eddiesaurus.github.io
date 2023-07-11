@@ -1,248 +1,140 @@
 body {
 	position: relative;
 	margin: 0 0 0 0; /* Use the full page. */
-	
-	background: url(../img/body00.jpg); /* Navigate back one directory and then look for img/banner00.jpg */
-	background-repeat: repeat;
-	background-position: center top;
-	
+
 	font-size: 100%;
+	
+	background-color: #f2f2d4;
+	background-image: url(../img/sunflowers00.jpg) /* Modified public domain art from https://www.publicdomainpictures.net/en/view-image.php?image=163648&picture=&jazyk=SE */
 }
 
-#banner {
-	position: relative;
-	z-index: 1; /* Display beneath content div. */
-	
-	width: 100%;
-	box-shadow: 0 30px 90px -30px black;
-	
-	background: url(../img/banner00.jpg); /* Navigate back one directory and then look for img/banner00.jpg */
-	background-repeat: repeat;
-	background-position: center bottom;
+.home, .footer {
+	color: #302c25;
 }
 
-#card {
-	position: relative;
-	margin: 18px auto;
+.card {
+	position: relative; /* Position relative to accommodate absolute positioned contents within. */
 	
-	aspect-ratio: 1 / 1.17; /* Maintain proportions when scaling card00.png */
+	border: 1px solid #302c25;
 	
-	background: url(../img/card00.png); /* Navigate back one directory and then look for img/card00.png */
-	background-position: 0;
-	background-size: 200% 100%;
+	background-color: #d7edf5;
+	background-image: url(../img/thankYou00.jpg); /* Original art by Natalie. */
+	background-size: contain; /* Fill the entire .card class with the background image. */
 	
-	/* border: 3px solid; /* Developer bounding box. */
+	aspect-ratio: 1 / 1.334; /* Maintain proportions of the background-image when scaling .card class width. */
+	
+	-webkit-box-shadow: 0px 0px 50px 0px rgba(48,44,37,0.7);
+	-moz-box-shadow: 0px 0px 50px 0px rgba(48,44,37,0.7);
+	box-shadow: 0px 0px 50px 0px rgba(48,44,37,0.7);	
 }
 
-#card:hover {
-	rotate: 5deg;
+.card, .home {
+	margin: 2% auto; /* Top and bottom margins is 2% of height. Left and right margins center the .card class. */
 }
 
-.cardText {
-	position: absolute;
-	left: 48%;
-	top: 30%;
-		
-	width: 31%;
+.text {
+	position: absolute; /* Center and stretch .text to fit the container using absolute position and 0 values for top, bottom, left, and right. */
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	
+	margin: 5%;
+}
+
+h1 {
 	text-align: center;
-	color: rgba(26, 13, 13, 0.85)
-}
-
-.cardText h1 {
-	font-family: 'Permanent Marker', cursive; /* https://www.w3schools.com/howto/howto_google_fonts.asp */
-	line-height: 100%;
-}
-
-.cardText p {
-	font-family: 'Indie Flower', cursive;
-	font-weight: bold;
-	line-height: 100%;
-}
-
-#content {
-	position: relative;
-	z-index: 2; /* Display above banner div box-shadow. */
-	margin: 18px auto;
 	
-	border: 1px solid 728b5b;
-	background-color: #eaeee6;
+	padding: 1vw 0;
 }
 
-#details {
-	padding: 12px;
+p {
+	font-family: georgia, serif;
 }
 
-#details h1 {
-	margin: 0 auto; /* Bounding box fits to text vertically. Horizontally centered. */
-	
-	font-family: 'Permanent Marker', cursive;
+.fancy {
+	font-family: 'Dancing Script', cursive;
 	font-weight: bold;
-	font-weight: bold;
+}
+
+.footer {
 	text-align: center;
-}
-
-#details, #footer p {
-	font-family: arial, sans-serif;
-}
-
-a.buttonAction, a.button {
-	display: block;
-	margin: 18px auto;
-	
-	max-width: 7em;
-	height: 40px;
-
-	padding: 0 12px 0 12px;
-
-	border: 1px solid #728b5b;
-	border-radius: 5px;
-	box-shadow: 3px 3px 6px -3px black;
-	
-	font-family: arial, sans-serif;
-	font-weight: bold;
-	
-	text-align: center;
-	vertical-align: center;	
-	line-height: 40px; /* Same height as the DIV to vertically center text. */
-	font-size: 1vm;
-	text-decoration: none;
-}
-
-a.buttonAction:link, a.buttonAction:visited {
-	background-color: #33cc33;
-	color: white;
-}
-
-a.buttonAction:hover {
-	background-color: #85e085;
-}
-
-a.buttonAction:active {
-	background-color: #196619;
-}
-
-a.button:link, a.button:visited {
-	background-color: #eaeee6;
-	color: black;	
-}
-
-a.button:hover {
-	background-color: #ccd6c2;
-}
-
-a.button:active {
-	background-color: #a6b795;
-}
-
-a.buttonAction:hover, a.button:hover {
-	transform: translateY(-1px);
-}
-
-a.buttonAction:active, a.button:active {
-	transform: translateY(0);
-}
-
-#footer p {
-	text-align: center;
-	font-size: 0.75em;
-	color: #728b5b;
+	font-size: 1em;
 }
 
 /* Desktop resolution full screen. */
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 1281px) {
+	body {
+		background-size: 85%;
+	}
+	
+	.card, .home {
+		max-width: 42%;
+	}
+	
+	h1 {
+		font-size: 4.5vw;
+	}
+	
+	p {
+		font-size: 1.75vw;
+	}
+}
+
+/* Desktop resolution two thirds screen. */
+@media only screen and (max-width: 1280px) {
 	body {
 		background-size: 80%;
 	}
 	
-	#banner {
-		height: 70%;
-		background-size: 100%;
+	.card, .home {
+		max-width: 52%; 
 	}
 	
-	#card {
-		/* border-color: red;  /* Developer bounding box. */
-		max-width: 48%;
+	h1 {
+		font-size: 5.5vw;
 	}
 	
-	#content {
-		width: 48%;
-	}
-
-	.cardText h1 {
-		font-size: 3.75vw; /* Text size set to vw will scale with the screen. */
-	}
-
-	.cardText p {
-		font-size: 1.9vw;
-	}
-	
-	#details h1 {
-		font-size: 2.25em;
+	p {
+		font-size: 2.25vw;
 	}
 }
+	
 
 /* iPad & Fire resolution. Desktop half screen. */
 @media only screen and (max-width: 960px) {
 	body {
-		background-size: 100%;
+		background-size: 75%;
 	}
 	
-	#banner {
-		height: 70%;
-		background-size: 150%;
+	.card, .home {
+		max-width: 82%;
 	}
 	
-	#card {
-		/* border-color: blue;  /* Developer bounding box. */
-		max-width: 62%;
-	}
-
-	#content {
-		width: 62%;
-	}
-
-	.cardText h1 {
-		font-size: 4.25vw;
-	}
-
-	.cardText p {
-		font-size: 2.5vw;
+	h1 {
+		font-size: 7vw;
 	}
 	
-	#details h1 {
-		font-size: 2em;
+	p {
+		font-size: 3.75vw;
 	}
 }
 	
 /* iPhone & Galaxy resolution. */
 @media only screen and (max-width: 620px) {
 	body {
-		background-size: 120%;
+		background-size: 70%;
 	}
 	
-	#banner {
-		height: 80%;
-		background-size: 215%;
+	.card, .home {
+		max-width: 72%;
 	}
 	
-	#card {
-		/* border-color: green;  /* Developer bounding box. */
-		max-width: 90%;
-	}
-	#content {
-		width: 90%;
-	}
-
-	.cardText h1 {
-		font-size: 5.85vw;
-	}
-
-	.cardText p {
-		font-size: 3.5vw;
+	h1 {
+		font-size: 7.5vw;
 	}
 	
-	#details h1 {
-		font-size: 1.75em;
+	p {
+		font-size: 3.25vw;
 	}
 }
